@@ -47,12 +47,14 @@ show movie 1
   var i = null;
   $("body").mousemove(function() {
       clearTimeout(i);
-      $(".menu").fadeIn(500);
+      //$(".menu").fadeIn(500);
+      toggleMenu(true);
       i = setTimeout(function () {
         console.log("fadeout menu");
-          $(".menu").fadeOut(800);
+        toggleMenu(false);
       }, 5000);
   });
+  $(".menu").hide();
   /*.mouseleave(function() {
       clearTimeout(i);
       $(".menu").fadeOut(1000);  
@@ -60,14 +62,32 @@ show movie 1
   */
 }
 
+function toggleMenu(toggle) {
+  if (toggle) {
+    $(".menu").fadeIn(500);
+  } else {
+    $(".menu").fadeOut(800);
+  }
+}
+
 function showVideo(index) {
-  var iframe = document.querySelector('iframe');
-  var player = new Vimeo.Player(iframe);
+  //var iframe = document.querySelector('iframe');
+
+  var options01 = {
+    url: "https://vimeo.com/495120707/1c7f5341f7"
+  };
+
+  var player = new Vimeo.Player('player', options01);
 
   player.on('play', function() {
     console.log('Played the video');
   });
   player.play();
+  
+  player.on('ended', function() {
+    console.log('ended the video');
+    player.destroy();
+  });
 
   player.getVideoTitle().then(function(title) {
     console.log('title:', title);
