@@ -6,6 +6,35 @@ body {
   background-position: center center;
 }
 
+header {
+  color: white;
+  display:flex;
+  flex-direction: horizontal;
+  justify-content: space-between;
+}
+
+header div {
+  margin-right: 16px;
+  margin-left: 16px;
+}
+header button {
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.video-iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#player {
+  width: 100%;
+  height: 100%;
+}
+
 .modal-content {
   background-color: rgba(255,255,255,0) !important;
   border-color: white !important;
@@ -49,11 +78,15 @@ body {
 }
 
 .footer {
+  color: white;
   display: flex;
   flex-direction: horizontal;
+  justify-content: space-between;
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 60px;
   line-height: 60px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
