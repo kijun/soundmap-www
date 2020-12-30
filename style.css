@@ -1,6 +1,10 @@
 body {
   font-size: 24px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.8);
   background-image: url("image/bg-2.jpg");
+  background-color: black;
   background-size: auto auto;
   background-repeat: no-repeat;
   background-position: center center;
@@ -17,6 +21,135 @@ header div {
   margin-right: 16px;
   margin-left: 16px;
 }
+
+.fader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  pointer-events: none;
+  background-color: white;
+  opacity: 1;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 5000;
+  /*pointer-events: none;*/
+}
+
+.pin {
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
+  border-style: none;
+  /*border-style: solid;
+  border-width: 2px;*/
+  background-color: rgba(255,255,255,0.7);
+  position: fixed;
+}
+
+.pin.large {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  border-style: solid;
+  border-width: 20px;
+  background-color: rgba(255,255,255,0);
+  border-color: rgba(255,255,255,0.7);
+}
+
+.pin.large:hover {
+  border-color: rgba(255,255,255,0.95);
+}
+
+.pin.center {
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 4px;
+}
+
+.fader.fadeout {
+  -webkit-animation: fadeout 3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeout 3s; /* Firefox < 16 */
+  -ms-animation: fadeout 3s; /* Internet Explorer */
+    -o-animation: fadeout 3s; /* Opera < 12.1 */
+      animation: fadeout 3s;
+  opacity: 0;
+}
+
+/*.modal-backdrop {
+  background-color: rgba(0,0,0,0.25);
+}*/
+
+.modal.fade .modal-dialog{
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0);
+}
+
+.fader.in {
+  opacity: 1;
+-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+-moz-animation: fadein 2s; /* Firefox < 16 */
+ -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+     animation: fadein 2s;
+}
+
+@keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+from { opacity: 1; }
+to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+from { opacity: 1; }
+to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+from { opacity: 1; }
+to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeout {
+from { opacity: 1; }
+to   { opacity: 0; }
+}
+
+
+
+
 header button {
 }
 
@@ -45,6 +178,29 @@ main {
   border-color: white !important;
   border-width: 2px !important;
   color: white;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: horizontal !important;
+  flex-wrap: nowrap !important;
+  padding: 0px !important;
+  align-items: stretch;
+}
+
+.modal-footer button {
+  color: white;
+  background-color: rgba(0,0,0,0) !important;
+  border-color: white !important;
+  border-width: 0px !important;
+  border-radius: 0;
+  width: 100%;
+  margin: 0px;
+}
+
+.modal-footer button:hover {
+  color: black;
+  background-color: rgba(255,255,255,0.7) !important;
 }
 
 .popup {
@@ -76,6 +232,7 @@ main {
   display: flex;
   flex-direction: horizontal;
   position: absolute;
+  font-size: 16px;
   top: 0;
   width: 100%;
   height: 60px;
@@ -91,6 +248,7 @@ main {
   bottom: 0;
   width: 100%;
   height: 60px;
+  font-size: 16px;
   line-height: 60px;
   padding-left: 16px;
   padding-right: 16px;
