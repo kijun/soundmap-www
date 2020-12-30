@@ -117,10 +117,13 @@ show movie 1
     if (player) {
       var mIntro = createModal('next', function(val){
         if (val == "next") {
+          // todo show next
+          player.destroy();
+          player = null
         }
       });
       mIntro.modal('show');
-  });
+  }});
 }
 
 function activateMenu () {

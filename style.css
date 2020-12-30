@@ -239,6 +239,17 @@ main {
   line-height: 60px;
 }
 
+.control button {
+  background-color: rgba(0,0,0,0);
+  border-style: none;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.control button:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
 .footer {
   color: white;
   display: flex;
