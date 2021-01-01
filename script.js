@@ -140,6 +140,7 @@ show movie 1
 */
 
   var i = null;
+  
   $("body").mousemove(function() {
       clearTimeout(i);
       //$(".menu").fadeIn(500);
@@ -188,9 +189,10 @@ function showNextVideo(idx) {
 
 function toggleMenu(toggle) {
   if (toggle) {
-    $(".menu").fadeIn(500);
+    //$(".menu").fadeIn(500);
+    $(".menu").fadeTo(500, 1);
   } else {
-    $(".menu").fadeOut(800);
+    $(".menu").fadeTo(800, 0);
   }
 }
 
