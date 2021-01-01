@@ -8,10 +8,10 @@ var VIDEO_URLS = {
   CREDITS: "https://www.youtube.com/embed/HCeM-uQ9qn4?autoplay=0"
 }
 var videos = [
-  "https://vimeo.com/495120707/1c7f5341f7", // real
-  "https://vimeo.com/495661645/75bbd45d65", // real
-  "https://vimeo.com/495661846/ef80712e3f", // virtual
-  "https://vimeo.com/495661846/ef80712e3f", // virtual
+  "https://vimeo.com/496053974", // santa - real
+  "https://vimeo.com/496030848", // ginari - real
+  "https://vimeo.com/496142012", // saeta - virtual
+  "https://vimeo.com/496030173", // budren - virtual 
 ]
 
 var vr = "https://hubs.mozilla.com/tJPQ7Pr/pastel-twin-universe?embed_token=6b20f7f4f25c9bd86da91bcdd14d0610";
@@ -122,7 +122,7 @@ var everything = function() {
       Math.random > 0.5 ? showVideo(0) : showVideo(1);
     }
     if (val == "virtual") {
-      showVideo(2);
+      Math.random > 0.5 ? showVideo(2) : showVideo(3);
     }
   });
   setTimeout(function(){
