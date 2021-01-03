@@ -10,11 +10,48 @@ var videos = [
 var modal_src = document.getElementById("modal-template").innerHTML;
 var modal_tmpl = Handlebars.compile(modal_src);
 
-var modals = {
+var modal_content = {
   "1": {
     "body": "hello world",
     "buttons": [
       {"value": 1, "text": "asdfasdf"}
+    ]
+  },
+  "intro-1": {
+    "body": `
+    <p>
+    <b>다중 공간에서의 사운드맵 프로젝트</b>는 
+    장소와 공간 기반의 공연 형식의 확장 가능성에 대한 실험과
+    동시에 온라인 미디어 기반 예술 창작물을 제작하는 의도로 기획되었습니다.
+    </p>
+
+    <p>
+    총 네 개의 공간과 음악, 영상을 20분에 걸쳐 감상하실 수 있습니다.
+    </p>
+    `,
+    "buttons": [
+      {"text": "시작하기"}
+    ]
+  },
+  "intro-2": {
+    "body": `
+    이 프로젝트는 실제 공간 네 곳을 정하고, 그 곳에서 많이 불리우던 음악을 선택한 뒤 가창자의 노래를 전자음악으로 편곡하였다. 정가, 경기민요, 서도민요, 남도민요(판소리) 가창자는 이수대엽 버들은, 경기민요 산타령, 서도민요 긴아리, 남도민요 새타령을 불렀다. 이 중 두 곡은 실제 공간에서 실사 촬영을 통해 영상이 제작이 되었고, 두 곡은 가상 공간 안에서 제작이 되었다. 관객은 서로 다른 공간, 다른 스타일의 음악, 영상을 경험하면서 버추얼 안에서 여행을 하게 된다. 
+    `,
+    "buttons": [
+      {"text": "다음으로"}
+    ]
+  },
+  "intro-3": {
+    "body": "다중공간에서의 사운드맵 프로젝트 3",
+    "buttons": [
+      {"text": "다음"}
+    ]
+  },
+  "q1": {
+    "body": "여행은 커녕 이동하기도 힘든 팬데믹의 시대입니다. 바다와 산, 존재하지 않는 실제 공간같은 세계와 가상 세계. 어느 곳에 먼저 가볼까요?",
+    "buttons": [
+      {"value": "real", "text": "실제공간"},
+      {"value": "virtual", "text": "가상사계"}
     ]
   }
 }
@@ -53,10 +90,6 @@ class History {
 
 var history = new History();
 
-var GAME_URL = "https://archive.org/embed/msdos_Prince_of_Persia_1990";
-
-var AUDIO_URL = "http://newtype2016.org/E/section3_sound_v1.mp3";
-
 //var myModalEl = document.getElementById('modal-intro');
 function createModal(elemId, onClick) {
   var modalElem = $('#modal-'+elemId);
@@ -68,6 +101,7 @@ function createModal(elemId, onClick) {
 }
 
 var everything = function() {
+  /*
   var mIntro = createModal('intro', function(val){
     mQ1.modal('show');
   });
@@ -79,11 +113,23 @@ var everything = function() {
       Math.random > 0.5 ? showVideo(2) : showVideo(3);
     }
   });
+  */
   setTimeout(function(){
     $(".fader").addClass('fadeout');
     setTimeout(function(){
       //$(".fader").removeClass("in");
-      mIntro.modal('show');
+      //mIntro.modal('show');
+      showModal("intro-1",
+        nextModal("intro-2",
+        nextModal("intro-3",
+        nextModal("q1", function(val) {
+          if (val == "real") {
+            Math.random > 0.5 ? showVideo(0) : showVideo(1);
+          }
+          if (val == "virtual") {
+            Math.random > 0.5 ? showVideo(2) : showVideo(3);
+          }
+        }))));
     }, 3000);
   }, 1000);
 /*
@@ -187,18 +233,17 @@ function showVideo(index) {
   });
 }
 
-//everything();
+everything();
 
 
 //var context = { title: "My New Post", body: "This is my first post!" };
 
 //var myModalEl = document.getElementById('modal-intro');
-function showModalFromTmpl(elemId, onClick) {
-  var data = modals[elemId+""];
+function showModal(elemId, onClick) {
+  var data = modal_content[elemId+""];
   data["modal-id"] = elemId;
   var html = modal_tmpl(data);
   var result = $("body").append(html);
-  console.log(html);
   var modalElem = $('#modal-'+elemId);
   console.log(modalElem);
   modalElem.find('button').click(function(){
@@ -208,7 +253,11 @@ function showModalFromTmpl(elemId, onClick) {
   return modalElem;
 }
 
-showModalFromTmpl("1", function(v) {alert(v)});
+function nextModal(modalId, onClick) {
+  return function(clickValue) {
+    showModal(modalId, onClick);
+  }
+}
 
 })();
 
