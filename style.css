@@ -102,6 +102,18 @@ header div {
      animation: fadein 2s;
 }
 
+.modal-content img {
+  width: 100%;
+}
+
+.fade {
+  -webkit-transition: opacity .75s linear;
+     -moz-transition: opacity .75s linear;
+      -ms-transition: opacity .75s linear;
+       -o-transition: opacity .75s linear;
+          transition: opacity .75s linear;
+}
+
 @keyframes fadein {
 from { opacity: 0; }
 to   { opacity: 1; }

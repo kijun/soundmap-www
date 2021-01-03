@@ -83,62 +83,6 @@
   </div>
 </div>
 
-<div class="modal fade" id="modal-qq" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
-  <div class="modal-dialog modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-        여행은 커녕 이동하기도 힘든 팬데믹의 시대입니다. 바다와 산, 존재하지 않는 실제 공간같은 세계와 가상 세계. 어느 곳에 먼저 가볼까요?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" value="real" data-dismiss="modal">실제공간</button>
-        <button type="button" class="btn btn-primary" value="virtual" data-dismiss="modal">가상세계</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modal-q2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
-  <div class="modal-dialog modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-        한국 전통음악 민요와 판소리, 정가 모두 다중 공간의 사운드맵에서 만나실 수 있어요. 날 것의 느낌이지만 매력적인, 신나고 경쾌한, 느리고 서정적인, 이질적인 결합 이중 어떤 음악을 더 선호하시나요?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" value="real" data-dismiss="modal">날</button>
-        <button type="button" class="btn btn-primary" value="virtual" data-dismiss="modal">이질</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modal-q3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
-  <div class="modal-dialog modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-        Q3 여행은 커녕 이동하기도 힘든 팬데믹의 시대입니다. 바다와 산, 존재하지 않는 실제 공간같은 세계와 가상 세계. 어느 곳에 먼저 가볼까요?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" value="real" data-dismiss="modal">실제공간</button>
-        <button type="button" class="btn btn-primary" value="virtual" data-dismiss="modal">가상세계</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modal-q4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
-  <div class="modal-dialog modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-        Q4 - 여행은 커녕 이동하기도 힘든 팬데믹의 시대입니다. 바다와 산, 존재하지 않는 실제 공간같은 세계와 가상 세계. 어느 곳에 먼저 가볼까요?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" value="real" data-dismiss="modal">실제공간</button>
-        <button type="button" class="btn btn-primary" value="virtual" data-dismiss="modal">가상세계</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="modal fade" id="modal-next" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
   <div class="modal-dialog modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -225,7 +169,7 @@
         </div>
         <div class="modal-footer">
           {{#each buttons}}
-            <button type="button" class="btn btn-primary" data-dismiss="modal" value="{{value}}">{{text}}</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" value="{{value}}" onclick="this.blur();">{{text}}</button>
           {{/each}}
         </div>
       </div>

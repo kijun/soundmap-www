@@ -26,7 +26,7 @@ var modal_content = {
     </p>
 
     <p>
-    총 네 개의 공간과 음악, 영상을 20분에 걸쳐 감상하실 수 있습니다.
+    총 네 개의 다른 공간, 음악, 영상을 20분에 걸쳐 감상하실 수 있습니다.
     </p>
     `,
     "buttons": [
@@ -35,8 +35,8 @@ var modal_content = {
   },
   "intro-2": {
     "body": `
-    이 프로젝트는 실제 공간 네 곳을 정하고, 그 곳에서 많이 불리우던 음악을 선택한 뒤 가창자의 노래를 전자음악으로 편곡하였다. 정가, 경기민요, 서도민요, 남도민요(판소리) 가창자는 이수대엽 버들은, 경기민요 산타령, 서도민요 긴아리, 남도민요 새타령을 불렀다. 이 중 두 곡은 실제 공간에서 실사 촬영을 통해 영상이 제작이 되었고, 두 곡은 가상 공간 안에서 제작이 되었다. 관객은 서로 다른 공간, 다른 스타일의 음악, 영상을 경험하면서 버추얼 안에서 여행을 하게 된다. 
-    `,
+    2017년도 사운드맵의 주제는 한강을 따라가는 소리지도였다. <br>
+    소리로 그린 지도의 연장선에서 보자면 실제 공간인 한강의 서쪽(파주, DMZ 부근)과 동쪽(두물머리, 동해로 흐르는)을 두 스팟(장소)으로 놓고<br> 서도민요와 강원민요를 두 축으로.`,
     "buttons": [
       {"text": "다음으로"}
     ]
@@ -48,12 +48,54 @@ var modal_content = {
     ]
   },
   "q1": {
-    "body": "여행은 커녕 이동하기도 힘든 팬데믹의 시대입니다. 바다와 산, 존재하지 않는 실제 공간같은 세계와 가상 세계. 어느 곳에 먼저 가볼까요?",
+    "body": "몸을 배척하는 공간에서 장시간 체류해보신 경험이 있으신가요? 여행은 커녕 이동하기도 힘든 팬데믹의 시대입니다. ?",
     "buttons": [
       {"value": "real", "text": "실제공간"},
       {"value": "virtual", "text": "가상사계"}
     ]
-  }
+  },
+  "q2": {
+    "body": "2 여행은 커녕 이동하기도 힘든 팬데믹의 시대입니다. 바다와 산, 존재하지 않는 실제 공간같은 세계와 가상 세계. 어느 곳에 먼저 가볼까요?",
+    "buttons": [
+      {"value": "real", "text": "실제공간"},
+      {"value": "virtual", "text": "가상사계"}
+    ]
+  },
+  "q3": {
+    "body": "3 여행은 커녕 이동하기도 힘든 팬데믹의 시대입니다. 바다와 산, 존재하지 않는 실제 공간같은 세계와 가상 세계. 어느 곳에 먼저 가볼까요?",
+    "buttons": [
+      {"value": "real", "text": "실제공간"},
+      {"value": "virtual", "text": "가상사계"}
+    ]
+  },
+  "q4": {
+    "body": "4 여행은 커녕 이동하기도 힘든 팬데믹의 시대입니다. 바다와 산, 존재하지 않는 실제 공간같은 세계와 가상 세계. 어느 곳에 먼저 가볼까요?",
+    "buttons": [
+      {"value": "real", "text": "실제공간"},
+      {"value": "virtual", "text": "가상사계"}
+    ]
+  },
+  "audio-1": {
+    "body": `<audio autoplay>  <source src="audio/pado-1.wav" type="audio/wav"> </audio>`,
+    "buttons": [
+      {"value": "real", "text": "실제공간"},
+      {"value": "virtual", "text": "가상사계"}
+    ]
+  },
+  "info-1-1": {
+    "body": `<img src="image/san-1.jpg">`,
+    "buttons": [
+      {"value": "more", "text": "다음 사진"},
+      {"value": "music", "text": "음악으로"},
+    ],
+    "action": function(value) {
+      if (value == "more") {
+        nextModal("info-1-2");
+      } else {
+        showVideo(1);
+      }
+    }
+  },
 }
 
 class History {
@@ -119,9 +161,11 @@ var everything = function() {
     setTimeout(function(){
       //$(".fader").removeClass("in");
       //mIntro.modal('show');
+      console.log("showing intro modal");
       showModal("intro-1",
         nextModal("intro-2",
-        nextModal("intro-3",
+        nextModal("audio-1",
+        nextModal("info-1-1",
         nextModal("q1", function(val) {
           if (val == "real") {
             Math.random > 0.5 ? showVideo(0) : showVideo(1);
@@ -129,7 +173,7 @@ var everything = function() {
           if (val == "virtual") {
             Math.random > 0.5 ? showVideo(2) : showVideo(3);
           }
-        }))));
+        })))));
     }, 3000);
   }, 1000);
 /*
@@ -180,10 +224,9 @@ function showNextVideo(idx) {
   } else {
     var watched = history.getNumberWatched();
     watched++;
-    var question = createModal('q'+watched, function(val){
+    showModal("q"+watched, function(val){
       showVideo(history.getUnwatchedVideo());
     });
-    question.modal('show');
   }
 }
 
