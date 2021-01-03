@@ -215,7 +215,25 @@
 </footer-->
 
 <div id="fader" class="fader"></div>
+<!-- Modal -->
+<script id="modal-template" type="text/x-handlebars-template">
+  <div class="modal fade" id="modal-{{modal-id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
+    <div class="modal-dialog modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          {{body}}
+        </div>
+        <div class="modal-footer">
+          {{#each buttons}}
+            <button type="button" class="btn btn-primary" data-dismiss="modal" value="{{value}}">{{text}}</button>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 
