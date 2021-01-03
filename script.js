@@ -35,8 +35,8 @@ var modal_content = {
   },
   "intro-2": {
     "body": `
-    2017년도 사운드맵의 주제는 한강을 따라가는 소리지도였다. <br>
-    소리로 그린 지도의 연장선에서 보자면 실제 공간인 한강의 서쪽(파주, DMZ 부근)과 동쪽(두물머리, 동해로 흐르는)을 두 스팟(장소)으로 놓고<br> 서도민요와 강원민요를 두 축으로.`,
+    "2017년도 사운드맵의 주제는 한강을 따라가는 소리지도였다." <br><br>
+    소리로 그린 지도의 연장선:<br>한강의 서쪽(파주, DMZ 부근)<br>동쪽(두물머리, 동해로 흐르는)<br><br>"서도민요와 강원민요를 두 축으로 나누어 음악을 재단하였다"`,
     "buttons": [
       {"text": "다음으로"}
     ]
@@ -48,10 +48,13 @@ var modal_content = {
     ]
   },
   "q1": {
-    "body": "몸을 배척하는 공간에서 장시간 체류해보신 경험이 있으신가요? 여행은 커녕 이동하기도 힘든 팬데믹의 시대입니다. ?",
+    "body": `몸을 배척하는 공간에서 장시간 체류해보신 경험이 있으신가요? 모래에 남은 발자국이 바람에 휩쓸려 사라집니다<br><br>
+    
+    팬데믹의 시대에서 함께 눈을 감고 다음 행선지를 상상해 봅니다.`,
     "buttons": [
-      {"value": "real", "text": "실제공간"},
-      {"value": "virtual", "text": "가상사계"}
+      {"value": "real", "text": "먼 바다의 풍경"},
+      {"value": "virtual", "text": "잠긴 도시의 문"},
+      {"value": "point", "text": "구름과 점"}
     ]
   },
   "q2": {
@@ -76,10 +79,10 @@ var modal_content = {
     ]
   },
   "audio-1": {
-    "body": `<audio autoplay>  <source src="audio/pado-1.wav" type="audio/wav"> </audio>`,
+    "body": `<audio autoplay>  <source src="audio/pado-1.wav" type="audio/wav"> </audio>
+    <p>2020년 12월 13일 오후 4시 35분, 태안 앞바다</p>`,
     "buttons": [
-      {"value": "real", "text": "실제공간"},
-      {"value": "virtual", "text": "가상사계"}
+      {"value": "real", "text": "다음"},
     ]
   },
   "info-1-1": {
@@ -91,8 +94,18 @@ var modal_content = {
     "action": function(value) {
       if (value == "more") {
         nextModal("info-1-2");
-      } else {
-        showVideo(1);
+      }
+    }
+  },
+  "info-1-2": {
+    "body": `<img src="image/san-2.jpg">`,
+    "buttons": [
+      {"value": "more", "text": "다음 사진"},
+      {"value": "music", "text": "음악으로"},
+    ],
+    "action": function(value) {
+      if (value == "more") {
+        nextModal("info-1-2");
       }
     }
   },
@@ -163,14 +176,15 @@ var everything = function() {
       //mIntro.modal('show');
       console.log("showing intro modal");
       showModal("intro-1",
-        nextModal("intro-2",
         nextModal("audio-1",
+        nextModal("intro-2",
+        nextModal("q1",
         nextModal("info-1-1",
-        nextModal("q1", function(val) {
+        function(val) {
           if (val == "real") {
             Math.random > 0.5 ? showVideo(0) : showVideo(1);
-          }
-          if (val == "virtual") {
+          } else {
+          //if (val == "virtual") {
             Math.random > 0.5 ? showVideo(2) : showVideo(3);
           }
         })))));
@@ -290,6 +304,7 @@ function showModal(elemId, onClick) {
   var modalElem = $('#modal-'+elemId);
   console.log(modalElem);
   modalElem.find('button').click(function(){
+    if (data["action"]) data["action"](this.value);
     onClick(this.value);
   });
   modalElem.modal('show');
