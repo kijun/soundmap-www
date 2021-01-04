@@ -1,5 +1,6 @@
 <html>
 <head>
+  <title>다중 공간에서의 사운드맵 프로젝트</title>
   <meta charset="UTF-8">
   <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -35,7 +36,7 @@
 </nav-->
 
 <header class="header menu">
-  <div>다중 공간에서의 사운드맵 프로젝트 by 조은희&nbsp;&nbsp;&nbsp;</div>
+  <!--div>다중 공간에서의 사운드맵 프로젝트 by 조은희&nbsp;&nbsp;&nbsp;</div-->
   <div></div>
   <!--div>#</div-->
   <div class="control"><button id="btn-next">→</button></div>
@@ -168,9 +169,13 @@
           {{{body}}}
         </div>
         <div class="modal-footer">
-          {{#each buttons}}
-            <button type="button" class="btn btn-primary" data-dismiss="modal" value="{{value}}" onclick="this.blur();">{{text}}</button>
-          {{/each}}
+          {{#if buttons}}
+            {{#each buttons}}
+              <button type="button" class="btn btn-primary" data-dismiss="modal" value="{{value}}" onclick="this.blur();">{{text}}</button>
+            {{/each}}
+          {{else}}
+            <button type="button" class="btn btn-primary" data-dismiss="modal" value="next" onclick="this.blur();">NEXT</button>
+          {{/if}}
         </div>
       </div>
     </div>
