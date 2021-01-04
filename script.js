@@ -34,7 +34,7 @@ var modal_content = {
     </p>`
   },
   "p3": {
-    "body": `<img src="image/p3.png">`,
+    "body": `<img src="image/p3-2.png">`,
   },
   "p4": {
     "body": "첫 번째 행선지는 버들은(teaser)입니다.",
@@ -205,9 +205,14 @@ var everything = function() {
         nextModal("p2",
         nextModal("p3",
         nextModal("p4",
-        nextModal("p5",
-        nextModal("p6",
-        nextModal("p7",
+        nextModal("p5", function(val) {
+          showVideo(0, function() {
+            showModal("p7",
+            nextModal("p8", function(val) {
+              showVideo(1, function() {
+                showModal("p10")
+              })}))})})))));
+        /*
         function(val) {
           if (val == "real") {
             Math.random > 0.5 ? showVideo(0) : showVideo(1);
@@ -216,6 +221,7 @@ var everything = function() {
             Math.random > 0.5 ? showVideo(2) : showVideo(3);
           }
         })))))));
+        */
     }, 3000);
   }, 1000);
 /*
@@ -243,18 +249,6 @@ show movie 1
   });
   */
 
-  $("#btn-next").click(function () {
-    if (player) {
-      var mIntro = createModal('next', function(val){
-        if (val == "next") {
-          // todo show next
-          player.destroy();
-          player = null
-          showNextVideo();
-        }
-      });
-      mIntro.modal('show');
-  }});
 }
 
 function showNextVideo(idx) {
@@ -299,6 +293,10 @@ function showVideo(index, next) {
     url: videos[index]
   }
 
+  function clearNextButton() {
+    $("#btn-next").prop("onclick", null).off("click");
+  }
+
   player = new Vimeo.Player('player', options);
 
   player.on('play', function() {
@@ -310,9 +308,27 @@ function showVideo(index, next) {
     console.log('ended the video');
     player.destroy();
     player = null;
+    clearNextButton();
     next();
     //showNextVideo();
   });
+
+  $("#btn-next").click(function () {
+    if (player) {
+      var mIntro = createModal('next', function(val){
+        if (val == "next") {
+          // todo show next
+          player.destroy();
+          player = null
+          clearNextButton();
+          next();
+        }
+      });
+      mIntro.modal('show');
+    }
+  });
+
+
 
   player.getVideoTitle().then(function(title) {
     console.log('title:', title);

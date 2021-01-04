@@ -93,12 +93,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div-->
       <div class="modal-body">
-        다음 영상으로 이동하시겠습니까?
+        <p>다음으로 이동하시겠습니까?</p>
+        <p>Would you like to skip this video?</p>
       </div>
       <div class="modal-footer">
         <!--button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button-->
-        <button type="button" class="btn btn-primary" value="cancel" data-dismiss="modal">취소</button>
-        <button type="button" class="btn btn-primary" value="next" data-dismiss="modal">다음으로</button>
+        <button type="button" class="btn btn-primary" value="cancel" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" value="next" data-dismiss="modal">NEXT</button>
       </div>
     </div>
   </div>
@@ -163,7 +164,7 @@
 <!-- Modal -->
 <script id="modal-template" type="text/x-handlebars-template">
   <div class="modal fade" id="modal-{{modal-id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
-    <div class="modal-dialog modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body">
           {{{body}}}
