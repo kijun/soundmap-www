@@ -68,11 +68,11 @@ var modal_content = {
   },
   "p11-1": { // saeta
     "body": `이제 우리의 마지막 행선지입니다.
-     <audio autoplay>  <source src="audio/saeta-1.mp3" type="audio/mp3"> </audio>`
+     <audio id="audio" autoplay>  <source src="audio/saeta-1.mp3" type="audio/mp3"> </audio>`
   },
   "p11-2": { // gina
     "body": `이제 우리의 마지막 행선지입니다.
-     <audio autoplay>  <source src="audio/pado-1.wav" type="audio/wav"> </audio>`
+     <audio id="audio" autoplay>  <source src="audio/pado-1.wav" type="audio/wav"> </audio>`
   },
   "p12": { 
     "body": `함께 여행해주셔서 감사합니다. 모두에게 다른 형태로 기억될 ‘다중 공간에서의 사운드맵 프로젝트’였습니다.`
@@ -308,6 +308,8 @@ var player;
 var NEXT = null;
 function showVideo(index, next) {
   NEXT = next;
+  var audio = document.getElementById('audio');
+  if (audio) audio.pause();
   //var iframe = document.querySelector('iframe');
   changeBackground();
   history.watch(index);
