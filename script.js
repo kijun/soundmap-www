@@ -3,8 +3,8 @@
 var videos = [
   "https://vimeo.com/496030173", // budren - virtual 
   "https://vimeo.com/496053974", // santa - real
-  "https://vimeo.com/496030848", // ginari - real
   "https://vimeo.com/496142012", // saeta - virtual
+  "https://vimeo.com/496030848", // ginari - real
 ]
 
 var modal_src = document.getElementById("modal-template").innerHTML;
@@ -54,19 +54,23 @@ var modal_content = {
     실제와 가상의 경계에서 짧은 꿈을 꾸기도 하죠.`,
   },
   "p8": { 
-    "body": `<img src="image/p8.png">`
+    "body": `<img src="image/p8.jpg">`
   },
   "p9": { 
     "body": "Movie2"
   },
   "p10": { 
-    "body": "자, 그럼 이제 어떤 공간으로 이동해볼까요?"
+    "body": "자, 그럼 이제 어떤 공간으로 이동해볼까요?",
+    "buttons": [
+      {"value": "saeta", "text": `<img src="image/p10-saeta.png">`},
+      {"value": "ginari", "text": `<img src="image/p10-ginari.jpg">`},
+    ]
   },
-  "p11-1": { 
+  "p11-1": { // saeta
     "body": `이제 우리의 마지막 행선지입니다.
-     <audio autoplay>  <source src="audio/pado-1.wav" type="audio/wav"> </audio>`
+     <audio autoplay>  <source src="audio/saeta-1.mp3" type="audio/mp3"> </audio>`
   },
-  "p11-2": { 
+  "p11-2": { // gina
     "body": `이제 우리의 마지막 행선지입니다.
      <audio autoplay>  <source src="audio/pado-1.wav" type="audio/wav"> </audio>`
   },
@@ -195,6 +199,13 @@ var everything = function() {
     }
   });
   */
+  function credit(_) {
+    showModal("p12", function(_) {
+      var credit = createModal('credit', function(_){
+        location.reload();
+      });
+      credit.modal('show');
+    })};
   setTimeout(function(){
     $(".fader").addClass('fadeout');
     setTimeout(function(){
@@ -205,12 +216,22 @@ var everything = function() {
         nextModal("p2",
         nextModal("p3",
         nextModal("p4",
-        nextModal("p5", function(val) {
+        nextModal("p5", function(_) {
           showVideo(0, function() {
             showModal("p7",
-            nextModal("p8", function(val) {
+            nextModal("p8", function(_) {
               showVideo(1, function() {
-                showModal("p10")
+                showModal("p10", function(val) {
+                  if (val == "saeta") {
+                    showVideo(2,
+                      nextModal("p11-2", function(_) {
+                        showVideo(3, credit)}));
+                  } else {
+                    showVideo(3,
+                      nextModal("p11-1", function(_) {
+                        showVideo(2, credit)}));
+                  }
+                })
               })}))})})))));
         /*
         function(val) {
@@ -284,7 +305,9 @@ function changeBackground(filename) {
 }
 
 var player;
+var NEXT = null;
 function showVideo(index, next) {
+  NEXT = next;
   //var iframe = document.querySelector('iframe');
   changeBackground();
   history.watch(index);
@@ -309,11 +332,15 @@ function showVideo(index, next) {
     player.destroy();
     player = null;
     clearNextButton();
-    next();
+    NEXT();
+    NEXT = null;
     //showNextVideo();
   });
 
+  var clicked = false;
   $("#btn-next").click(function () {
+    if (clicked) return;
+    clicked = true;
     if (player) {
       var mIntro = createModal('next', function(val){
         if (val == "next") {
@@ -321,7 +348,8 @@ function showVideo(index, next) {
           player.destroy();
           player = null
           clearNextButton();
-          next();
+          NEXT();
+          NEXT = null;
         }
       });
       mIntro.modal('show');

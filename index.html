@@ -99,14 +99,14 @@
       <div class="modal-footer">
         <!--button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button-->
         <button type="button" class="btn btn-primary" value="cancel" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" value="next" data-dismiss="modal">NEXT</button>
+        <button type="button" class="btn btn-primary" value="next" data-dismiss="modal">Next</button>
       </div>
     </div>
   </div>
 </div>
 
 <div class="modal fade" id="modal-credit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
-  <div class="modal-dialog modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
     <div class="modal-content">
       <!--div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">
@@ -132,7 +132,7 @@
       </div>
       <div class="modal-footer">
         <!--button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button-->
-        <button type="button" class="btn btn-primary" value="next" data-dismiss="modal">처음으로</button>
+        <button type="button" class="btn btn-primary" value="next" data-dismiss="modal">Play again</button>
       </div>
     </div>
   </div>
@@ -172,10 +172,10 @@
         <div class="modal-footer">
           {{#if buttons}}
             {{#each buttons}}
-              <button type="button" class="btn btn-primary" data-dismiss="modal" value="{{value}}" onclick="this.blur();">{{text}}</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" value="{{value}}" onclick="this.blur();">{{{text}}}</button>
             {{/each}}
           {{else}}
-            <button type="button" class="btn btn-primary" data-dismiss="modal" value="next" onclick="this.blur();">NEXT</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" value="next" onclick="this.blur();">Next</button>
           {{/if}}
         </div>
       </div>
