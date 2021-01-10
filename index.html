@@ -2,6 +2,7 @@
 <head>
   <title>다중 공간에서의 사운드맵 프로젝트</title>
   <meta charset="UTF-8">
+  <meta name="description" content="다중 공간에서의 사운드맵 프로젝트(Soundmap Project in Multi Space)’는 장소와 공간 기반의 사운드맵 프로젝트의 공연 형식 확장 가능성에 대한 실험과 동시에 온라인 미디어 기반 예술 창작물을 제작하며 실재와 가상, 아날로그와 디지털 그리고 오프라인과 온라인 플랫폼에서 작업할 때 우리가 근본적으로 다루어야 하는 가치에 대해 탐색합니다.">
   <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&display=swap" rel="stylesheet">
@@ -10,88 +11,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!--header>
-  <button>#</button>
-  <button class="play">⏸</button>
-</header-->
-
-<!--nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">#</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav-->
 
 <header class="header menu">
-  <!--div>다중 공간에서의 사운드맵 프로젝트 by 조은희&nbsp;&nbsp;&nbsp;</div-->
   <div></div>
-  <!--div>#</div-->
   <div class="control"><button id="btn-next">→</button></div>
 </header>
 
-<!--div id="map" class="map"></div-->
-
 <main>
-<!--iframe class="video-iframe" src="https://player.vimeo.com/video/495120707" width="640" height="358" frameborder="0" allow="autoplay; fullscreen" allowfullscreen autoplay=1></iframe-->
-<!--iframe id="video" class="video-iframe" src="//www.youtube.com/embed/2XtKZ2XK1v8?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe-->
 <div id="player"></div>
 
 </main>
 
 <!-- Button trigger modal -->
-<!--button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button-->
 
 <!-- Modal -->
-<div class="modal fade" id="modal-intro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
-  <div class="modal-dialog modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <!--div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
-          사운드맵 프로젝트</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div-->
-      <div class="modal-body">
-        <p>
-        <b>다중 공간에서의 사운드맵 프로젝트</b>는 
-        장소와 공간 기반의 공연 형식의 확장 가능성에 대한 실험과
-        동시에 온라인 미디어 기반 예술 창작물을 제작하는 의도로 기획되었습니다.
-        </p>
-
-        <p>
-        총 네 개의 공간과 음악, 영상을 20분에 걸쳐 감상하실 수 있습니다.
-        </p>
-      </div>
-      <div class="modal-footer">
-        <!--button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button-->
-        <button type="button" class="btn btn-primary" data-dismiss="modal" value="1">시작하기</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="modal fade" id="modal-next" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
   <div class="modal-dialog modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <!--div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
-          사운드맵 프로젝트</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div-->
+    <div class="modal-content background-transparent">
       <div class="modal-body">
         <p>다음으로 이동하시겠습니까?</p>
         <p>Would you like to skip this video?</p>
@@ -107,7 +43,7 @@
 
 <div class="modal fade" id="modal-credit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-    <div class="modal-content">
+    <div class="modal-content background-black">
       <!--div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">
           사운드맵 프로젝트</h5>
@@ -126,34 +62,12 @@
   </div>
 </div>
 
-<!--iframe src="https://player.vimeo.com/video/247250381" width="640" height="358" frameborder="0" allow="autoplay; fullscreen" allowfullscreen autoplay=1></iframe-->
-
-<!--iframe src="https://hubs.mozilla.com/tJPQ7Pr/pastel-twin-universe?embed_token=6b20f7f4f25c9bd86da91bcdd14d0610" style="width: 1024px; height: 768px;" allow="microphone; camera; vr; speaker;"></iframe-->
-
-<!--iframe id="video" src="//www.youtube.com/embed/5iiPC-VGFLU?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe-->
-
-
-<!--div class="question" id="q1">
-  <h2>1.</h2>
-  <p>여행은커녕 이동하기도 힘든 팬데믹의 시대입니다. 바다와 산, 존재하지 않는 실제 공간같은 세계와 가상 세계. 어느 곳에 먼저 가볼까요?</p>
-  <button>실제 공간</button>
-  <button>가상 세계</button>
-</div>
-<!--div class="movie">
-  <video>
-    <source src="">
-  </video>
-</div-->
-<!--footer class="footer menu">
-  <div></div>
-</footer-->
-
 <div id="fader" class="fader"></div>
 <!-- Modal -->
 <script id="modal-template" type="text/x-handlebars-template">
   <div class="modal fade" id="modal-{{modal-id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-      <div class="modal-content">
+      <div class="modal-content background-black">
         <div class="modal-body">
           {{{body}}}
         </div>
@@ -176,9 +90,7 @@
 <script src="https://www.youtube.com/iframe_api"></script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<!--script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-<!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script-->
 <script src="script.js"></script>
 </body>
 </html>
