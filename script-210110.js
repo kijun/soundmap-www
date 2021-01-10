@@ -12,7 +12,12 @@ var modal_tmpl = Handlebars.compile(modal_src);
 
 var modal_content = {
   "p0": {
-    "body": `<img src="image/p0.jpeg">`,
+    "body": `
+    조은희 Eunhee Cho
+    <br><br>
+    다중 공간에서의 사운드맵 프로젝트<br>
+    Soundmap Project in Multi Space
+    `,
   },
   "p1": {
     "body": `
@@ -73,7 +78,7 @@ var modal_content = {
       구십삼춘에 짜 내느니 나의 시름"</i>
     </p>
     <p style="text-align: center">
-      <i>The willows become threads</br>
+      <i>"The willows become threads</br>
       The hummingbird becomes a Buk</br>
       They fly weaving in the sigh of a fresh spring day”</i>
     </p>`,
@@ -115,7 +120,7 @@ var modal_content = {
       모든 강물은 다 바다로 흐르되 바다를 채우지 못하며 어느 곳으로 흐르든지 그리로 연하여 흐르느니라"</i>
     </p>
     <p style="text-align: center">
-      <i>The sun also ariseth, and the sun goeth down, and hasteth to his place where he arose</br>
+      <i>"The sun also ariseth, and the sun goeth down, and hasteth to his place where he arose</br>
       The wind goeth toward the south, and turneth about unto the north; it whirleth about continually, and the wind returneth again according to his circuits</br>
       All the rivers run into the sea; yet the sea is not full; unto the place from whence the rivers come, thither they return again"</i>
     </p>
