@@ -3,9 +3,9 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 100;
   color: rgba(255, 255, 255, 0.8);
-  background-image: url("image/bg-0.jpeg");
+  background-image: url("image/bg-2.jpg");
   background-color: black;
-  background-size: 100% auto;
+  background-size: auto auto;
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -187,17 +187,16 @@ main {
 }
 
 .modal-content {
+  background-color: rgba(0,0,0,0) !important;
   border-color: white !important;
   border-width: 2px !important;
   color: white;
 }
 
 .background-black {
-  background-color: rgba(0,0,0,1) !important;
 }
 
 .background-transparent {
-  background-color: rgba(0,0,0,0) !important;
 }
 
 .modal-footer {

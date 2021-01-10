@@ -11,6 +11,9 @@ var modal_src = document.getElementById("modal-template").innerHTML;
 var modal_tmpl = Handlebars.compile(modal_src);
 
 var modal_content = {
+  "p0": {
+    "body": `<img src="image/p0.jpeg">`,
+  },
   "p1": {
     "body": `
     <p>
@@ -251,7 +254,8 @@ var everything = function() {
       //$(".fader").removeClass("in");
       //mIntro.modal('show');
       console.log("showing intro modal");
-      showModal("p1",
+      showModal("p0",
+        nextModal("p1",
         nextModal("p2",
         nextModal("p3",
         nextModal("p4",
@@ -275,7 +279,7 @@ var everything = function() {
                           showVideo(2, credit)}))});
                   }
                 })
-              })}))})})))))));
+              })}))})}))))))));
         /*
         function(val) {
           if (val == "real") {
