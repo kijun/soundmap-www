@@ -13,10 +13,12 @@ var modal_tmpl = Handlebars.compile(modal_src);
 var modal_content = {
   "p0": {
     "body": `
+    <p style="text-align: center">
     조은희 Eunhee Cho
     <br><br>
     다중 공간에서의 사운드맵 프로젝트<br>
     Soundmap Project in Multi Space
+    </p>
     `,
   },
   "p1": {
