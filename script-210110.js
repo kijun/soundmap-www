@@ -144,7 +144,7 @@ var modal_content = {
     "body": `
     <b>다중 공간에서의 사운드맵 프로젝트(Soundmap Project in Multi Space)</b>
     <br>
-    기획/작곡 : 조은희 
+    기획/음악 : 조은희 
     <br>
     프로듀서 : 이혜원 
     <br>
@@ -154,16 +154,24 @@ var modal_content = {
     <br>
     웹사이트 기획개발 : 서기준 
     <br>
+    웹사이트 번역: 최현지
+    <br>
     VR 제작 : 기어이(Giioii)
     <br>
     <br>
-    2020 서울문화재단 온라인미디어 예술활동지원사업 ART MUST GO ON`
+    2020 서울문화재단 온라인미디어 예술활동지원사업 ART MUST GO ON
+    <br>
+    <br>
+    후원 : 문화체육관광부, 한국문화예술위원회, 서울문화재단
+    <br>
+    이 온라인 예술활동의 결과물은 문화체육관광부, 한국문화예술위원회, 서울문화재단의 기금을 지원받아 제작되었습니다. (온라인미디어 예술활동지원사업)
+    `
   },
   "p17": { // credit kor
     "body": `
     <b>Soundmap Project in Multi Space</b>
     <br>
-    Director/Composer : Eunhee Cho
+    Director/Music : Eunhee Cho
     <br>
     Producer : Rene Hyewon Lee 
     <br>
@@ -171,7 +179,9 @@ var modal_content = {
     <br>
     Vocal : Kim Mubin, Sung Seul-gi, Ahn Jung-ah, Kwon Song-hee 
     <br>
-    Website management/programming : Kijun Seo
+    Website management/development : Kijun Seo
+    <br>
+    Website translation: Hyunji Choi
     <br>
     VR Production: Giioii
     <br>
