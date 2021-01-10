@@ -28,7 +28,8 @@ var modal_content = {
     </p>
     <p>
     The Soundmap Project in Multi Space, based on ‘place’ and ‘space’, experiments with the potential to expand the performance format. This project explores the values that fundamentally need to be addressed when working with the real and virtual, analog, and digital platforms.
-    </p>`
+    </p>
+    <audio id="audio-0" autoplay loop>  <source src="audio/intro.mp3" type="audio/mp3"> </audio>`
   },
   "p2": {
     "body": `
@@ -365,6 +366,8 @@ function showVideo(index, next) {
   var audio = document.getElementById('audio-1');
   if (audio) audio.pause();
   audio = document.getElementById('audio-2');
+  if (audio) audio.pause();
+  audio = document.getElementById('audio-0');
   if (audio) audio.pause();
   //var iframe = document.querySelector('iframe');
   changeBackground();
