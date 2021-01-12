@@ -34,10 +34,10 @@ var modal_content = {
   "p2": {
     "body": `
     <p>
-    이 프로젝트는 공간 네 곳을 정하고, 그 곳에서 많이 불리던 음악을 선택한 뒤 가창자의 노래를 전자음악으로 창작하였습니다. 가곡, 정가, 경기민요, 서도민요, 남도민요(판소리) 가창자는 여창가곡 우조 이수대엽(버들은), 경기민요 산타령, 서도민요 긴아리, 남도민요 새타령을 불렀습니다. 이 중 두 곡은 실재공간에서 실사 촬영을 통해 영상이 제작이 되었고, 두 곡은 가상공간 안에서 제작이 되었습니다. 관객은 서로 다른 공간, 다른 스타일의 음악, 영상을 경험하면서 버추얼 안에서 시적 여행을 하게 됩니다. 
+    이 프로젝트는 공간 네 곳을 정하고, 그 곳에서 많이 불리던 음악을 선택한 뒤 가창자의 노래를 전자음악으로 창작하였습니다. 가곡, 경기민요, 서도민요, 남도민요(판소리) 가창자는 여창가곡 우조 이수대엽(버들은), 경기민요 산타령, 서도민요 긴아리, 남도민요 새타령을 불렀습니다. 이 중 두 곡은 실재공간에서 실사 촬영을 통해 영상이 제작이 되었고, 두 곡은 가상공간 안에서 제작이 되었습니다. 관객은 서로 다른 공간, 다른 스타일의 음악, 영상을 경험하면서 버추얼 안에서 시적 여행을 하게 됩니다. 
     </p>
     <p>
-    Eunhee Cho focused on four regions, selected the most frequently sung traditional music, and created electronic sounds with vocals. Performers of Gagok, Jeongga, Gyeonggi folk songs, Seodo folk songs, and Namdo(pansori) folk songs sang ‘Yeochang Gagok Wujo Isudaeyeop’, Gyeonggi folk song ‘Santaryeong’, Soedo folk song ‘Gin Ari’, and Namdo folk song ‘Saetaryeong’. Two of these pieces filmed in-person while the other two were produced in the virtual space. Audiences take a poetic virtual journey wandering around the diverse spaces, sounds, films and rhythms.
+    Eunhee Cho focused on four regions, selected the most frequently sung traditional music, and created electronic sounds with vocals. Performers of Gagok, Gyeonggi folk songs, Seodo folk songs, and Namdo(pansori) folk songs sang ‘Yeochang Gagok Wujo Isudaeyeop’, Gyeonggi folk song ‘Santaryeong’, Soedo folk song ‘Gin Ari’, and Namdo folk song ‘Saetaryeong’. Two of these pieces filmed in-person while the other two were produced in the virtual space. Audiences take a poetic virtual journey wandering around the diverse spaces, sounds, films and rhythms.
     </p>`
   },
   "p3": {
